@@ -1,6 +1,9 @@
+const Calculator = () => {
+  return (
+    <>
+      <p>Calculator here</p>
+    </>
+  );
+};
 
-export default function Calculator() {
-    return (
-        <></>
-    )
-}
+export default Calculator;
