@@ -10,7 +10,6 @@ const Calculator = () => {
       <CalculatorActiveSession />
       <CalculatorDisplay />
       <CalculatorKeypad />
-      <p>Calculator here</p>
     </>
   );
 };
