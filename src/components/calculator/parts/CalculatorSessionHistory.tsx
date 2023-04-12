@@ -1,8 +1,10 @@
+import { CaretUpFilled } from "@ant-design/icons";
+
 const CalculatorSessionHistory = () => {
   return (
-    <>
-      <div>CalculatorSessionHistory</div>
-    </>
+    <div>
+      <CaretUpFilled />
+    </div>
   );
 };
 

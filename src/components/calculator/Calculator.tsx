@@ -5,12 +5,12 @@ import CalculatorSessionHistory from "./parts/CalculatorSessionHistory";
 
 const Calculator = () => {
   return (
-    <>
+    <div className="p-3">
       <CalculatorSessionHistory />
       <CalculatorActiveSession />
       <CalculatorDisplay />
       <CalculatorKeypad />
-    </>
+    </div>
   );
 };
 

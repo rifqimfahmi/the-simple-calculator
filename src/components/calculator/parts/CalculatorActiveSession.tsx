@@ -1,8 +1,8 @@
 const CalculatorActiveSession = () => {
   return (
-    <>
-      <div>CalculatorActiveSession</div>
-    </>
+    <div className="border-b-4">
+      <p className="text-end">12</p>
+    </div>
   );
 };
 

@@ -1,7 +1,7 @@
 const CalculatorDisplay = () => {
   return (
     <div>
-      <input className="w-full" value={0} disabled/>
+      <input className="w-full text-end" type="number" value={132123123123123123} disabled/>
     </div>
   );
 };
