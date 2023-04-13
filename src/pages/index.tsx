@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Calculator from "@/components/calculator/Calculator";
 import Footer from "@/components/Footer";
+import { Provider } from "react-redux";
+import calculatorStore from "@/store/calculatorStore";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +17,9 @@ export default function Home() {
       <div className="flex-auto flex">
         <div className="flex-none w-4"></div>
         <div className="grow bg-orange-950">
-          <Calculator />
+          <Provider store={calculatorStore}>
+            <Calculator />
+          </Provider>
         </div>
         <div className="flex-none w-4"></div>
       </div>
