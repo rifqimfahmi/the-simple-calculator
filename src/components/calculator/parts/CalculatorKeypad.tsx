@@ -1,25 +1,28 @@
+import ArithmeticOp from "../keypad/ArithmeticOp";
+import Number from "../keypad/Number";
+
 const CalculatorKeypad = () => {
   return (
     <div className="grid grid-cols-4">
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
-      <div className="col-span-2">1</div>
-      <div>3</div>
-      <div>4</div>
+      <ArithmeticOp symbol="c" />
+      <ArithmeticOp symbol="+/-" />
+      <ArithmeticOp symbol="%" />
+      <ArithmeticOp symbol="/" />
+      <Number number="7" />
+      <Number number="8" />
+      <Number number="9" />
+      <ArithmeticOp symbol="x" />
+      <Number number="4" />
+      <Number number="5" />
+      <Number number="6" />
+      <ArithmeticOp symbol="-" />
+      <Number number="1" />
+      <Number number="2" />
+      <Number number="3" />
+      <ArithmeticOp symbol="+" />
+      <Number number="0" className="col-span-2" />
+      <Number number="." />
+      <ArithmeticOp symbol="=" />
     </div>
   );
 };
