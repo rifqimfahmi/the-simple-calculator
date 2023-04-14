@@ -12,11 +12,11 @@ const calculatorSlice = createSlice({
   name: "calculator",
   initialState,
   reducers: {
-    updateDisplay: (state, action: PayloadAction<string>) => {
-      state.activeCalc = action.payload;
+    numberKeypadClicked: (state, action: PayloadAction<string>) => {
+      state.activeCalc = `${state.activeCalc}${action.payload}`;
     },
   },
 });
 
-export const { updateDisplay } = calculatorSlice.actions;
+export const { numberKeypadClicked } = calculatorSlice.actions;
 export default calculatorSlice.reducer;
