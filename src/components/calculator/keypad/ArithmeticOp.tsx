@@ -1,11 +1,12 @@
 interface Props {
   symbol: string;
+  className?: string;
 }
 
-const ArithmeticOp = ({ symbol }: Props) => {
+const ArithmeticOp = ({ symbol, className }: Props) => {
   return (
     <>
-      <p>{symbol}</p>
+      <button className={`${className} bg-cyan-900 p-3`}>{symbol}</button>
     </>
   );
 };

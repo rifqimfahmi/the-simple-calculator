@@ -3,7 +3,7 @@ import Number from "../keypad/Number";
 
 const CalculatorKeypad = () => {
   return (
-    <div className="grid grid-cols-4">
+    <div className="grid grid-cols-4 gap-1">
       <ArithmeticOp symbol="c" />
       <ArithmeticOp symbol="+/-" />
       <ArithmeticOp symbol="%" />

@@ -20,7 +20,7 @@ const Number = ({ number, className }: Props) => {
 
   return (
     <>
-      <button className={className} onClick={onClickNumber}>
+      <button className={`${className} bg-cyan-800 p-3`} onClick={onClickNumber}>
         {number}
       </button>
     </>
