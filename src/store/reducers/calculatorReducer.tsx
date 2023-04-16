@@ -15,7 +15,7 @@ export enum ModifierEnum {
 }
 
 export interface CalculatorState {
-  activeCalc: string;
+  displayedNum: string;
   currentCalc?: string;
   currentCalcOp?: OpEnum;
   activeSession: string;
@@ -27,7 +27,7 @@ function onNumberKeypadClicked(
   state: CalculatorState,
   action: PayloadAction<string>
 ) {
-  let current = state.activeCalc;
+  let current = state.displayedNum;
   let lastChar = current.charAt(current.length - 1);
   let payload = action.payload;
   let next: string;
@@ -42,7 +42,7 @@ function onNumberKeypadClicked(
   } else {
     next = `${current}${payload}`;
   }
-  state.activeCalc = next;
+  state.displayedNum = next;
 }
 
 function onArithmeticOpClicked(
@@ -52,9 +52,9 @@ function onArithmeticOpClicked(
   let payload = action.payload;
   let displayedNumber = StateUtil.getDisplayedNumber(state);
   if (StateUtil.hasPendingOp(state)) {
-    state.activeCalc;
+    state.displayedNum;
   } else {
-    state.activeCalc = `${state.activeCalc}${payload}`;
+    state.displayedNum = `${state.displayedNum}${payload}`;
   }
   if (payload == OpEnum.ADD) {
     state.currentCalc = displayedNumber;
@@ -75,9 +75,9 @@ function onModifierClicked(
 const StateUtil = {
   getDisplayedNumber: (state: CalculatorState): string => {
     if (state.currentCalcOp) {
-      return state.activeCalc.substring(0, state.activeCalc.length - 2);
+      return state.displayedNum.substring(0, state.displayedNum.length - 2);
     } else {
-      return state.activeCalc;
+      return state.displayedNum;
     }
   },
   hasPendingOp: (state: CalculatorState): boolean => {
@@ -97,7 +97,7 @@ const calculatorSlice = createSlice({
 
 export function resetCalculatorState(): CalculatorState {
   return {
-    activeCalc: "0",
+    displayedNum: "0",
     activeSession: "0",
   };
 }

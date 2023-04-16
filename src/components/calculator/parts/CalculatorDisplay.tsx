@@ -5,7 +5,7 @@ import { CalculatorStoreState } from "@/store/calculatorStore";
 
 const CalculatorDisplay = () => {
   const activeDisplay = useSelector(
-    (state: CalculatorStoreState) => state.one.activeCalc
+    (state: CalculatorStoreState) => state.one.displayedNum
   );
   const dispatch = useDispatch();
   return (

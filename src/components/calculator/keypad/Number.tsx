@@ -10,7 +10,7 @@ interface Props {
 
 const Number = ({ number, className }: Props) => {
   const activeDisplay = useSelector(
-    (state: CalculatorStoreState) => state.one.activeCalc
+    (state: CalculatorStoreState) => state.one.displayedNum
   );
   const dispatch = useDispatch();
 
