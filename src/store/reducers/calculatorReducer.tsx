@@ -18,6 +18,8 @@ function onNumberKeypadClicked(
     next = action.payload;
   } else if (lastChar == "." && action.payload == ".") {
     next = current;
+  } else if (action.payload == "." && current.includes('.')) {
+    next = current;
   } else {
     next = `${current}${action.payload}`;
   }

@@ -48,6 +48,17 @@ describe("calculator reducer numberKeypadClicked test", () => {
     expect(state.activeCalc).toBe("2");
   });
 
+  it("should only has one .", () => {
+    let state: CalculatorState = resetCalculatorState();
+    state = calculatorReducer(state, numberKeypadClicked("2"));
+    state = calculatorReducer(state, numberKeypadClicked("."));
+    state = calculatorReducer(state, numberKeypadClicked("5"));
+    state = calculatorReducer(state, numberKeypadClicked("."));
+    state = calculatorReducer(state, numberKeypadClicked("6"));
+
+    expect(state.activeCalc).toBe("2.56");
+  });
+
   //   it("should not exceed 9 digit", () => {
   //     const state: CalculatorState = resetCalculatorState();
   //     expect(calculatorReducer(state, numberKeypadClicked("")));
