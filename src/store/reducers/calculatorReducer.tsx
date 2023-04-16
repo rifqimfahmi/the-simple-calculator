@@ -7,13 +7,28 @@ export interface CalculatorState {
 
 const initialState: CalculatorState = resetCalculatorState();
 
+function onNumberKeypadClicked(
+  state: CalculatorState,
+  action: PayloadAction<string>
+) {
+  let current = state.activeCalc;
+  let lastChar = current.charAt(current.length - 1);
+  let next: string;
+  if (lastChar == "0" && current.length == 1 && action.payload != ".") {
+    next = action.payload;
+  } else if (lastChar == "." && action.payload == ".") {
+    next = current;
+  } else {
+    next = `${current}${action.payload}`;
+  }
+  state.activeCalc = next;
+}
+
 const calculatorSlice = createSlice({
   name: "calculator",
   initialState,
   reducers: {
-    numberKeypadClicked: (state, action: PayloadAction<string>) => {
-      state.activeCalc = `${state.activeCalc}${action.payload}`;
-    },
+    numberKeypadClicked: onNumberKeypadClicked,
   },
 });
 

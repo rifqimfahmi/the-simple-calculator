@@ -8,8 +8,26 @@ describe("calculator reducer numberKeypadClicked test", () => {
   it("should not add 0 if the clicked number is 0 on initialState", () => {
     let state: CalculatorState = resetCalculatorState();
     state = calculatorReducer(state, numberKeypadClicked("0"));
+    state = calculatorReducer(state, numberKeypadClicked("0"));
 
     expect(state.activeCalc).toBe("0");
+  });
+
+  it("should add 0 if the current number is not 0", () => {
+    let state: CalculatorState = resetCalculatorState();
+    state = calculatorReducer(state, numberKeypadClicked("5"));
+    state = calculatorReducer(state, numberKeypadClicked("0"));
+    state = calculatorReducer(state, numberKeypadClicked("0"));
+
+    expect(state.activeCalc).toBe("500");
+  });
+
+  it("should not remove 0 when on type . on initial state", () => {
+    let state: CalculatorState = resetCalculatorState();
+    state = calculatorReducer(state, numberKeypadClicked("."));
+    state = calculatorReducer(state, numberKeypadClicked("5"));
+
+    expect(state.activeCalc).toBe("0.5");
   });
 
   it("should not add more than one .", () => {
